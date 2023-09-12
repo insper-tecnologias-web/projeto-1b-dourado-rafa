@@ -14,12 +14,18 @@
       crossorigin="anonymous"
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Permanent+Marker&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Permanent+Marker&display=swap" />
     <link rel="stylesheet" href="{% static 'notes/css/styles.css' %}" />
     <title>Get-it</title>
   </head>
 
   <body>
+
+    <header class="appbar">
+      <img class="logo" src="{% static 'notes/img/logo-getit.png' %}"/>
+      <h2 class="subtitle">Como o Post-it, mas com outro verbo</h2>
+    </header>
+
     {% block content %} {% endblock %}
     
     <script type="text/javascript" src="{% static 'notes/script/script.js' %}"></script>

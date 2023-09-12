@@ -3,11 +3,6 @@
 
 {% block content %}
 
-<div class="appbar">
-    <img class="logo" src="{% static 'notes/img/logo-getit.png' %}"/>
-    <span class="subtitle">Como o Post-it, mas com outro verbo</span>
-</div>
-
 <main class="container">
     <form class="form-card" method="post">
         {% csrf_token %}
@@ -17,16 +12,7 @@
     </form>
 
     <ul id="notes-list" class="card-container">
-        {% for note in notes %}
-        <li id="note-{{note.id}}" class="card">
-            <div class="card-header">
-              <h3 class="card-title">{{note.title}}</h3>
-            </div>
-            <div class="card-content">
-              <p>{{note.content}}</p>
-            </div>
-          </li>
-        {% endfor %}
+      {% block notes %} {% endblock %}
     </ul>
 </main>
 

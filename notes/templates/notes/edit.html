@@ -1,0 +1,18 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<main class="container">
+  <form class="form-card" action="/update/{{note.id}}/" method="post">
+    {% csrf_token %}
+    <input class="form-card-title" type="text" name="title" placeholder="Título" value="{{note.title}}"/>
+    <textarea class="autoresize" name="content" placeholder="Digite o conteúdo...">{{note.content}}</textarea>
+    <div class="buttons">
+        <a class="interactive btn-gray" href="/">Cancelar</a>
+        <button class="interactive btn-yellow" type="submit">Salvar</button>
+    </div>
+  </form>
+</main>
+
+{% endblock %}
