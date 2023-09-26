@@ -18,13 +18,19 @@ document.addEventListener("DOMContentLoaded", function () {
     textarea.addEventListener("input", autoResize, false);
   }
 
-  // Sorteia classes de cores aleatoriamente para os cards
+  // Sorteia classes de angulo aleatoriamente para os cards
   let cards = document.getElementsByClassName("card");
   for (let i = 0; i < cards.length; i++) {
     let card = cards[i];
-    card.className += ` card-color-${getRandomInt(
-      1,
-      5
-    )} card-rotation-${getRandomInt(1, 11)}`;
+    card.className += ` card-rotation-${getRandomInt(1, 11)}`;
+  }
+  let bigCards = document.getElementsByClassName("big-card");
+  for (let i = 0; i < bigCards.length; i++) {
+    let card = bigCards[i];
+    card.className += ` card-rotation-${getRandomInt(1, 11)}`;
   }
 });
+
+function goBack() {
+  window.history.back()
+}

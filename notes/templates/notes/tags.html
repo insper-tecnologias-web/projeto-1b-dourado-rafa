@@ -1,0 +1,26 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block notes %}
+
+<main class="container">
+    <ul class="card-container">
+        {% for tag, amount in tags_amounts %}
+        <li class="big-card card-color-{{tag.color}}">
+            <div class="card-header">
+                <div class="card-buttons">
+                    <a class="interactive btn-icon" href="/edit/tag/{{tag.id}}/"><i class="material-icons">edit_note</i></a>
+                    <a class="interactive btn-icon" href="/delete/tag/{{tag.id}}/"><i class="material-icons">delete_forever</i></a>
+                </div>
+                <h3 class="tag-title">{{tag.name}}</h3>
+            </div>
+            <div class="card-content">
+                <p>Há {{amount}} notas com essa Tag.</p>
+            </div>
+            <a class="interactive btn-icon" href="/tag/{{tag.name}}/"><i class="big-icon material-icons">arrow_forward</i></a>
+        </li>
+        {% endfor %}
+    </ul>
+</main>
+
+{% endblock %}

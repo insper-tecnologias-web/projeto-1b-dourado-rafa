@@ -3,18 +3,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
     <meta charset="UTF-8" lang="pt-br"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get-it</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Permanent+Marker&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="{% static 'notes/css/styles.css' %}" />
     <title>Get-it</title>
   </head>
@@ -22,11 +16,14 @@
   <body>
 
     <header class="appbar">
-      <img class="logo" src="{% static 'notes/img/logo-getit.png' %}"/>
-      <h2 class="subtitle">Como o Post-it, mas com outro verbo</h2>
+      <div class="logo-container">
+        <a href="/"> <img class="logo" src="{% static 'notes/img/logo-getit.png' %}"/> </a>
+        <h2 class="subtitle">Como o Post-it, mas com outro verbo</h2>
+      </div>
+      <a href="/tag"> <i class="appbar-icon material-icons">tag</i></a>
     </header>
 
-    {% block content %} {% endblock %}
+    {% block notes %} {% endblock %}
     
     <script type="text/javascript" src="{% static 'notes/script/script.js' %}"></script>
   </body>

@@ -1,0 +1,24 @@
+{% extends "notes/notes.html" %}
+{% load static %}
+
+{% block content %}
+
+<form class="form-card" action="/update/tag/{{tag.id}}/" method="post">
+  {% csrf_token %}
+  <h3 class="form-title">Editar Tag</h3>
+  <input class="form-card-title" type="text" name="name" placeholder="None" value="{{tag.name}}" maxlength="15" autocomplete="off"/>
+  <select class="form-card-extra" type="text" name="color" placeholder="Cor">
+    {% for color in colors %}
+      {% if color == tagcolor %}
+        <option value="{{color}}" selected="selected">{{color}}</option>
+      {% else %}
+        <option value="{{color}}">{{color}}</option>  
+      {% endif %}
+    {% endfor %}
+  </select>
+  <div class="buttons">
+    <a class="interactive btn-gray" onclick="goBack()">Cancelar</a>
+    <button class="interactive btn-yellow" type="submit">Salvar</button>
+  </div>
+</form>
+{% endblock %}

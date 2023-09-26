@@ -1,0 +1,20 @@
+{% extends "notes/notes.html" %}
+{% load static %}
+
+{% block content %}
+
+<form class="form-card" method="post">
+    {% csrf_token %}
+    <h3 class="form-title">Criar Nova Nota</h3>
+    <input id="card-title" class="form-card-title" name="title" type="text" placeholder="Título"  />
+    <textarea id="card-content" class="autoresize" name="content" placeholder="Digite o conteúdo..." ></textarea>
+    <input class="form-card-extra" type="text" name="tag" placeholder="Tag" list="tags" autocomplete="off" maxlength="15" />
+    <datalist id="tags">
+      {% for tag in tags %}
+        <option value="{{tag.name}}">
+      {% endfor %}
+    </datalist>
+    <button class="interactive btn-yellow" type="submit">Criar</button>
+</form>
+
+{% endblock %}

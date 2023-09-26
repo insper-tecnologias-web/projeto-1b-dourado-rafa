@@ -1,21 +1,30 @@
-{% extends "notes/index.html" %}
+{% extends "notes/base.html" %}
 {% load static %}
 
 {% block notes %}
 
-{% for note in notes %}
-<li id="note-{{note.id}}" class="card">
-  <div class="card-header">
-    <div class="card-buttons">
-      <a class="interactive btn-icon" href="/edit/{{note.id}}/"><img src="{% static 'notes/img/icon-editar.png' %}" class="icon" /></a>
-      <a class="interactive btn-icon" href="/delete/{{note.id}}/"><img src="{% static 'notes/img/icon-apagar.png' %}" class="icon" /></a>
-    </div>
-    <h3 class="card-title">{{note.title}}</h3>
-  </div>
-  <div class="card-content">
-    <p>{{note.content}}</p>
-  </div>
-</li>
-{% endfor %}
+<main class="container">
+
+  {% block content %} {% endblock %}
+
+  <ul class="card-container">
+    {% for note in notes %}
+    <li class="card card-color-{{note.tag.color}}">
+      <div class="card-header">
+        <div class="card-buttons">
+          <a class="interactive btn-icon" href="/edit/note/{{note.id}}/"><i class="material-icons">edit_note</i></a>
+          <a class="interactive btn-icon" href="/delete/note/{{note.id}}/"><i class="material-icons">delete_forever</i></a>
+        </div>
+        <h3 class="card-title">{{note.title}}</h3>
+      </div>
+      <div class="card-content">
+        <p>{{note.content}}</p>
+      </div>
+      <a class="interactive tag" href="/tag/{{note.tag.id}}/">#{{note.tag.name}}</a>
+    </li>
+    {% endfor %}
+  </ul>
+
+</main>
 
 {% endblock %}

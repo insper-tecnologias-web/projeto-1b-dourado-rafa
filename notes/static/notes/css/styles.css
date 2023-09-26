@@ -7,15 +7,25 @@ body {
 .appbar {
   background-color: #f7d736;
   display: flex;
-  width   : 100%;
+  width: 100%;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
-
+.logo-container {
+  display: flex;
+  flex: row;
+  align-items: center;
+}
 .logo {
   width: 5vw;
   padding: 0.5rem;
+}
+.appbar-icon {
+  font-size: 3rem;
+  padding: 0.5rem;
+  transform: rotate(-9deg);
 }
 
 .container {
@@ -24,15 +34,16 @@ body {
   align-items: center
 }
 
-.box-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 25vh auto;
-}
-
-.box-error {
-  height: 70%;
+.form-title {
+  border: 0;
+  margin-bottom: 1rem;
+  height: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4c4c4c;
+  font-family: "Roboto", sans-serif;
+  width: 100%; 
+  text-align: center;
 }
 
 .form-card {
@@ -43,7 +54,7 @@ body {
   flex-direction: column;
   box-shadow: 5px 15px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   border-radius: 0.5rem;
-  width: 35vw;
+  width: 30rem;
   align-items: center;
 }
 
@@ -56,12 +67,25 @@ body {
   color: #4c4c4c;
   font-family: "Roboto", sans-serif;
   width: 100%; 
-
 }
 .form-card-title::-webkit-input-placeholder {
   font-size: 1.5rem;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
+}
+.form-card-extra {
+  border: 0;
+  margin-bottom: 1rem;
+  resize: none;
+  padding-bottom: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  color: #4c4c4c;
+  font-size: 1rem;
+  width: 100%;
+}
+.form-card-tag::-webkit-input-placeholder {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
 }
 
 .autoresize {
@@ -87,29 +111,57 @@ body {
   flex-wrap: wrap;
 
   margin: 0 2.5vw;
-
 }
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 12.5vw;
+  width: 15rem;
   margin: 1vw 0.5vw;
   border-radius: 0.25rem;
   font-family: 'Permanent Marker', cursive;
   padding: 0.5rem;
   box-shadow: 5px 15px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
-
-
-.icon {
-  width: 0.75vw;
+.big-icon {
+  font-size: 3rem;
+  padding: 0.1rem;
 }
-
 .btn-icon {
   background-color: transparent;
   border: 0;
+}
+
+.big-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20rem;
+  height: 20rem;
+  margin: 3vw 0.5vw;
+  border-radius: 0.25rem;
+  font-family: 'Permanent Marker', cursive;
+  padding: 0.5rem;
+  box-shadow: 5px 15px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.tag {
+  background-color: transparent;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 0.9rem;
+  border: 0;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  text-align: left;
+  width: 100%;
+}
+.tag-title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+  word-wrap: break-word;
 }
 
 .card-header {
@@ -124,13 +176,11 @@ body {
   justify-content: flex-end;
   width: 100%;
 }
-
 .card-title {
   width: 100%;
   padding-bottom: 1rem;
   font-size: 1.25rem;
 }
-
 .card-content {
   padding-bottom: 1rem;
   color: #4c4c4c;
@@ -141,6 +191,7 @@ body {
 display: none;
 }
 
+.card-color-0 { background-color: #ffffff; }
 .card-color-1 { background-color: #ead3a7; }
 .card-color-2 { background-color: #9de0f5; }
 .card-color-3 { background-color: #ef89ba; }
