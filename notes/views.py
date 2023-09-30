@@ -63,10 +63,10 @@ def view_notes_tag(request, id):
 def delete_tag(request, id):
     tag = Tag.objects.get(id=id)
     notes = Note.objects.filter(tag=tag.id)
-    if tag.name != 'SEM TAG' and notes.count() > 0:
-        tag_none, _ = Tag.objects.get_or_create(name='SEM TAG')
-        for note in notes:
-            if note.tag.name == tag.name:
+    if tag.name != 'SEM TAG':
+        if notes.count() > 0:
+            tag_none, _ = Tag.objects.get_or_create(name='SEM TAG')
+            for note in notes:
                 note.tag = tag_none
                 note.save()
         tag.delete()
